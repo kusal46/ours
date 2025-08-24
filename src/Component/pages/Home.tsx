@@ -3,25 +3,23 @@ import { motion } from "framer-motion";
 import IMG2 from "@/assets/AniationTitle.png";
 import BackgroundVideo from "@/assets/bg.mp4";
 
-
 const MotionGrid = motion(Grid);
 const MotionImg = motion.img;
 
 const Home = () => {
-
     const isSmallScreen = window.innerWidth < 600;
 
-  // Smooth image scroll animation
+    // Smooth image scroll animation
     const fadeInUp = {
-        initial: { x: '-100%' },
+        initial: { x: "-100%" },
         animate: {
-        x: '100%',
+        x: "100%",
         transition: {
             duration: 15,
             repeat: Infinity,
-            repeatType: "reverse" as const,
-            ease: "linear",
-            type: "tween" as const,
+            repeatType: "reverse" as const, // ✅ cast to const
+            ease: "linear" as const,        // ✅ cast to valid easing type
+            type: "tween" as const,         // ✅ cast to valid animation type
             delay: 0.5,
         },
         },
@@ -36,8 +34,8 @@ const Home = () => {
         transition: {
             duration: 1.5,
             delay: 0.5,
-            ease: 'easeOut',
-            type: 'tween',
+            ease: "easeOut" as const,       // ✅ valid easing
+            type: "tween" as const,         // ✅ valid animation type
         },
         },
     };
@@ -45,33 +43,32 @@ const Home = () => {
     return (
         <>
         {/* Moving Image */}
-        {   isSmallScreen ? null : (
-                <MotionImg
-                    initial="initial"
-                    animate="animate"
-                    variants={fadeInUp}
-                    src={IMG2}
-                    alt="Hero Image"
-                    style={{
-                    width: 450,
-                    height: 'auto',
-                    marginTop: 16,
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    display: 'block',
-                    }}
-                />
-            )
-        }
+        {isSmallScreen ? null : (
+            <MotionImg
+            initial="initial"
+            animate="animate"
+            variants={fadeInUp}
+            src={IMG2}
+            alt="Hero Image"
+            style={{
+                width: 450,
+                height: "auto",
+                marginTop: 16,
+                marginLeft: "auto",
+                marginRight: "auto",
+                display: "block",
+            }}
+            />
+        )}
 
         {/* Background + Content */}
         <Grid
             container
             direction="column"
             sx={{
-            minHeight: '100vh',
-            position: 'relative',
-            overflow: 'hidden',
+            minHeight: "100vh",
+            position: "relative",
+            overflow: "hidden",
             }}
         >
             {/* Background Video */}
@@ -81,13 +78,12 @@ const Home = () => {
             loop
             muted
             style={{
-                position: 'absolute',
+                position: "absolute",
                 top: 0,
                 left: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                // zIndex: -1,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
             }}
             />
 
@@ -103,23 +99,23 @@ const Home = () => {
             variants={startAni}
             sx={{
                 flexGrow: 1,
-                fontFamily: 'poppins',
-                position: 'relative',
+                fontFamily: "poppins",
+                position: "relative",
                 zIndex: 1,
-                textAlign: 'center',
+                textAlign: "center",
                 px: 2,
             }}
             >
             <Typography
                 sx={{
-                color: '#fff',
+                color: "#fff",
                 fontSize: {
-                    xs: '2rem',
-                    sm: '3rem',
-                    md: '4rem',
-                    lg: '4.5rem',
+                    xs: "2rem",
+                    sm: "3rem",
+                    md: "4rem",
+                    lg: "4.5rem",
                 },
-                fontWeight: 'bold',
+                fontWeight: "bold",
                 }}
             >
                 We make it easy
@@ -127,24 +123,24 @@ const Home = () => {
 
             <Typography
                 sx={{
-                color: '#fff',
+                color: "#fff",
                 mt: 2,
                 px: 2,
                 fontSize: {
-                    xs: '1.2rem',
-                    sm: '1.6rem',
-                    md: '2rem',
-                    lg: '2.5rem',
+                    xs: "1.2rem",
+                    sm: "1.6rem",
+                    md: "2rem",
+                    lg: "2.5rem",
                 },
-                fontWeight: 'bold',
-                backgroundColor: '#07298e24',
+                fontWeight: "bold",
+                backgroundColor: "#07298e24",
                 width: {
-                    xs: '90%',
-                    sm: '80%',
-                    md: '70%',
-                    lg: '50%',
+                    xs: "90%",
+                    sm: "80%",
+                    md: "70%",
+                    lg: "50%",
                 },
-                borderRadius: '8px',
+                borderRadius: "8px",
                 }}
             >
                 Create beautiful and functional <br /> websites, Easily!
@@ -154,13 +150,16 @@ const Home = () => {
                 variant="contained"
                 sx={{
                 mt: 2,
-                bgcolor: '#2137ffff',
-                '&:hover': { bgcolor: '#ff068bff' },
-                width: '150px',
-                borderRadius: '8px',
+                bgcolor: "#2137ffff",
+                "&:hover": { bgcolor: "#ff068bff" },
+                width: "150px",
+                borderRadius: "8px",
                 }}
                 onClick={() =>
-                window.open('https://admirable-pavlova-07fae5.netlify.app/', '_blank')
+                window.open(
+                    "https://admirable-pavlova-07fae5.netlify.app/",
+                    "_blank"
+                )
                 }
             >
                 Live Demo
