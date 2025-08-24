@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 
-type Props = {}
 
 const serviceItems = [
     { description: 'One CRUD', price: '2000.00', details: '(with version control)' },
@@ -12,7 +11,7 @@ const serviceItems = [
     { description: 'Registration Pages with validation', price: '1300.00', details: '' }
 ];
 
-const Priceform = (props: Props) => {
+const Priceform = () => {
     return (
         <Box sx={{ p: 4, background: "linear-gradient(to bottom, #0f0c29, #020452ff, #0e0e30ff)", borderRadius: "12px", color: "white" }}>
             {/* Title */}

@@ -3,9 +3,8 @@ import Tabs from '@/Component/Tabs'
 import { Button, Typography } from '@mui/material'
 import IMG1 from '@/assets/OURS.png'
 
-type Props = {}
 
-const Hero = (props: Props) => {
+const Hero = () => {
     return (
         <Grid>
 

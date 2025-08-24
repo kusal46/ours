@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import IMG2 from "@/assets/AniationTitle.png";
 import BackgroundVideo from "@/assets/bg.mp4";
 
-type Props = {};
 
 const MotionGrid = motion(Grid);
 const MotionImg = motion.img;
 
-const Home = (props: Props) => {
+const Home = () => {
 
     const isSmallScreen = window.innerWidth < 600;
 

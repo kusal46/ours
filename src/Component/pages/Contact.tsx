@@ -5,9 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import videoBG from "@/assets/videoBG.mp4";
 import Priceform from "./Priceform";
 
-type Props = {};
 
-const Contact = (props: Props) => {
+const Contact = () => {
     const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
 
     return (

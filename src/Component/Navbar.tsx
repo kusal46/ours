@@ -4,9 +4,9 @@ import { Button, IconButton } from "@mui/material";
 import TripelLines from '@/Component/TripelLines'
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
-type Props = {}
 
-export const Navbar = (props: Props) => {
+
+export const Navbar = () => {
     const onClickHandler = (section: string) => {
         const element = document.getElementById(section);
         if (element) {

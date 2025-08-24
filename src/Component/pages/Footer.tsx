@@ -2,9 +2,9 @@ import { Box,Typography,IconButton } from '@mui/material'
 import { Facebook, LinkedIn, Instagram, Twitter, WhatsApp } from '@mui/icons-material'
 import IMG1 from '@/assets/OURS.png'
 
-type Props = {}
 
-const Priceform = (props: Props) => {
+
+const Priceform = () => {
     return (
         <Box sx={{ p: 4, background: "linear-gradient(to bottom, #0f0c29, #302b63, #24243e)", borderRadius: "12px", color: "white" }}>
 
